@@ -31,6 +31,7 @@
 !/debian
 !/scripts
 !/reg-tests
+!/mayhem
 # Reject some generic files
 *.o
 *.a
