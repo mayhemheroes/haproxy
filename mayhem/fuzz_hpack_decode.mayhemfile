@@ -1,5 +1,5 @@
 image: ghcr.io/mayhemheroes/haproxy:latest
 project: haproxy
-target: fuzz_cfg_parser
+target: fuzz_hpack_decode
 cmds:
-- cmd: /out/fuzz_cfg_parser
+- cmd: /out/fuzz_hpack_decode
