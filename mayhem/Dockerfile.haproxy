@@ -1,0 +1,12 @@
+FROM ubuntu AS builder
+
+RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y gcc make 
+RUN mkdir /work
+COPY . /work
+WORKDIR /work
+RUN make TARGET=linux-glibc 
+
+FROM ubuntu
+COPY --from=builder /work/haproxy /
+COPY --from=builder /work/mayhem/haproxy.cfg /
+RUN mkdir -p /var/lib/haproxy
