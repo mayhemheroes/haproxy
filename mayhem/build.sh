@@ -28,6 +28,9 @@ sed 's/int main(int argc/int main2(int argc/g' -i ./src/haproxy.c
 sed 's/dladdr(main,/dladdr(main2,/g' -i ./src/tools.c
 sed 's/(void*)main/(void*)main2/g' -i ./src/tools.c
 
+# make read_cfg visible
+sed 's/static int read_cfg/int read_cfg/' -i ./src/haproxy.c
+
 
 SETTINGS="-Iinclude -g -DUSE_POLL -DUSE_TPROXY -DCONFIG_HAPROXY_VERSION=\"\" -DCONFIG_HAPROXY_DATE=\"\""
 
