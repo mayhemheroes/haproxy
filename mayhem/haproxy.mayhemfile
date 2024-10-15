@@ -1,0 +1,21 @@
+image: ghcr.io/mayhemheroes/haproxy-bin:latest 
+duration: 600 
+project: haproxy 
+target: haproxy
+advanced_triage: true
+tasks:
+  - name: exploitability_factors
+  - name: behavior_testing
+  - name: coverage_analysis
+cmds:
+  - cmd: /haproxy -f /haproxy.cfg
+    network:
+      url: 'tcp://localhost:8080'
+      timeout: 2
+      client: false
+
+
+
+
+
+
