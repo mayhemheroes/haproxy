@@ -35,7 +35,7 @@ LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 	fclose(fp);
 
 	// Fuzz the cfg parser
-	readcfgfile(filename);
+	read_cfg(filename);
 
 	unlink(filename);
 
